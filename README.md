@@ -49,7 +49,7 @@ This project is developed as part of a Capstone Project, following agile sprints
 - **Django 4+**  
 - **Django REST Framework**  
 - **SimpleJWT (JWT Auth)**  
-- **PostgreSQL**  
+- **MySQL**  
 - **Pillow** (for image uploads)  
 - **drf-spectacular** (OpenAPI docs)
 
@@ -60,5 +60,5 @@ This project is developed as part of a Capstone Project, following agile sprints
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/eyecareconnect.git
+git clone https://github.com/oseiBonsu-617/eyecareconnect.git
 cd eyecareconnect
