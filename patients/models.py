@@ -8,7 +8,6 @@ class Patient(models.Model):
         ('female', 'Female'),
         ('others', 'Others')
     ]
-    patient_id = models.IntegerField()
     first_name = models.CharField(max_length=120)
     last_name = models.CharField(max_length=120, blank=True)
     age = models.PositiveIntegerField(null=True, blank=True)

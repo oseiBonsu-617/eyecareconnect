@@ -27,5 +27,8 @@ urlpatterns = [
 
     # Patients
     path('patients/', include('patients.urls')),
+
+    # Examinations
+    path('', include('exams.urls'))
 ]
 
