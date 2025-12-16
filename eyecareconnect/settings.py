@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'EYECARECONNECT',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'Nobbonsu617$'
+        'PASSWORD': 'Nobbonsu617$',
     }
 }
 
@@ -138,8 +138,11 @@ AUTH_USER_MODEL = 'accounts.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework_permission'
+    # ]
 }
 
 SIMPLE_JWT = {
@@ -149,6 +152,7 @@ SIMPLE_JWT = {
 
 DJOSER = {
     'SERIALIZERS': {
-        'user_create': 'accounts.serializers.UserCreateSerializer'
+        'user_create': 'accounts.serializers.UserCreateSerializer',
+        'current_user': 'accounts.serializers.UserSerializer'
     }
 }

@@ -3,7 +3,7 @@ from .views import PatientViewSet
 from django.urls import path, include
 
 router = DefaultRouter()
-router.register('patients', PatientViewSet, basename='patients')
+router.register('profile', PatientViewSet, basename='patients')
 
 urlpatterns = [
     path(r'', include(router.urls))
