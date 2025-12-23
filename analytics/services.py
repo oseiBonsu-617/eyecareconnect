@@ -2,14 +2,18 @@ from datetime import datetime
 from django.db.models import Count
 from django.db.models import Q
 from django.utils.timezone import make_aware
+from rest_framework.exceptions import ValidationError
 from patients.models import Patient
 from exams.models import Examination, Refraction, OcularAssessment
 
 
 def parse_dates(start_date, end_date):
-    start = make_aware(datetime.strptime(start_date, "%Y-%m-%d")) if start_date else None
-    end = make_aware(datetime.strptime(end_date, "%Y-%m-%d")) if end_date else None
-    return start, end
+    try:
+        start = make_aware(datetime.strptime(start_date, "%Y-%m-%d")) if start_date else None
+        end = make_aware(datetime.strptime(end_date, "%Y-%m-%d")) if end_date else None
+        return start, end
+    except ValueError:
+        raise ValidationError("Dates must be in YYYY-MM-DD format.")
 
 
 def get_overview_stats(start_date=None, end_date=None):

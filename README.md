@@ -1,3 +1,17 @@
+# EyeCareConnect
+
+## Overview
+## Features
+## Tech Stack
+## Project Architecture
+## Authentication
+## API Endpoints
+## Sprint Breakdown
+## Setup Instructions
+## Running Tests
+## Future Improvements
+
+
 # 👁️ EyeCareConnect API  
 A Clinical Eye Screening & Record Management System  
 Built with Django REST Framework & JWT Authentication  
