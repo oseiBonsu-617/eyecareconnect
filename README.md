@@ -36,6 +36,16 @@ This project is developed as part of a Capstone Project, following agile sprints
 
 ## ✨ Features  
 ### **Authentication & Authorization**
+## Authentication
+
+EyeCareConnect uses JWT-based authentication via Djoser and SimpleJWT.
+
+### Login
+```http
+POST /auth/jwt/create/
+
+Authorization: Bearer <access_token>
+```
 - JWT-based authentication  
 - Custom `User` model with roles: `admin`, `clinician`, `assistant`  
 - Role-based access (optional extensions)
@@ -58,6 +68,21 @@ This project is developed as part of a Capstone Project, following agile sprints
 
 ---
 
+## Project Architecture
+
+EyeCareConnect follows a modular, service-oriented backend architecture using Django and Django REST Framework.
+
+Each domain is isolated into its own Django app:
+- `accounts` handles authentication, user roles, and permissions.
+- `patients` manages patient demographic records.
+- `exams` stores structured clinical examination data.
+- `analytics` provides read-only reporting and insights.
+
+Business logic is separated from API views using a service layer (`services.py`) to improve maintainability, testability, and scalability. Views remain thin and focused on request/response handling.
+
+Role-based access control is enforced through custom DRF permissions to ensure data security and clinical integrity.
+
+
 ## 🏗 Technology Stack
 - **Python 3.10+**  
 - **Django 4+**  
@@ -68,6 +93,18 @@ This project is developed as part of a Capstone Project, following agile sprints
 - **drf-spectacular** (OpenAPI docs)
 
 ---
+
+## Setup Instructions
+
+```bash
+git clone https://github.com/yourusername/eyecareconnect.git
+cd eyecareconnect
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
 
 # 🚀 Getting Started
 
@@ -135,3 +172,4 @@ Sprint 2 established the core clinical data layer of EyeCareConnect. The system 
 | /analytics/screening/ | Screening indicators |
 | /analytics/refractive-errors/ | Refractive error distribution |
 | /analytics/clinicians/ | Exams per clinician |
+```
